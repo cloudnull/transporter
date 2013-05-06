@@ -28,7 +28,7 @@ configfile = """
 # choose one or the other.
 
 # Available System variables :
---------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # log_level = [info,error,warn,debug]  +  mail-main-contact = WhoReadsEmail
 # os_user = YOU                        +  mail_debug = True | False
 # os_apikey = SuperSecretInformation   +  mail_url = AURL
