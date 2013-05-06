@@ -30,11 +30,11 @@ Installation is simple :
         python setup.py install
 
 
-Setup is Simple too edit the file "/etc/XENOSImages/config.cfg" :
+Setup is Simple too edit the file "/etc/xenosimager/config.cfg" :
 
     .. code-block:: bash
 
-        vi /etc/XENOSImages/config.cfg
+        vi /etc/xenosimager/config.cfg
 
 
 In the previous file, add your credentials. If you feel so inclined, you can also add your mail relay information and the system will send you a message when the images are created or if there are overall issues. 
