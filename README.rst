@@ -95,6 +95,9 @@ Logs are created for all interaction of the imager, and can be found here :
         /var/log/xenosimager.log
 
 
+For automated image create please have a look at the example.cron.txt file, which is where you can find cron job examples, but with little to no ingenuity I am sure you could figure out other methods for automated image creation.
+
+
 Get Social
 ----------
 

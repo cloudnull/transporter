@@ -1,2 +1,2 @@
-45 12 * * 0 root XENOSImages --system-config /etc/XENOSImages/config.cfg --image-name weekly
-1 4 * * * root XENOSImages --system-config /etc/XENOSImages/config.cfg --image-name daily
+45 12 * * 0 root xenosimager --system-config /etc/xenosimager/config.cfg --image-name weekly
+1  4  * * * root xenosimager --system-config /etc/xenosimager/config.cfg --image-name daily
