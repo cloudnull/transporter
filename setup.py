@@ -40,7 +40,7 @@ setuptools.setup(
     author=info.__author__,
     author_email=info.__email__,
     description=info.__description__,
-    install_requires=['bookofnova', 'python-dateutil==1.3.0'],
+    install_requires=['bookofnova', 'python-dateutil==1.3.0', 'argparse'],
     packages=['imager'],
     long_description=long_description,
     license=info.__license__,
