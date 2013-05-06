@@ -120,6 +120,10 @@ class InstanceImager(object):
                     data['reason'] = 'image_done'
                     self.notify_me(data)
                 else:
+                    self._nova.destroy_image(image_id=imid,
+                                             nova=self.nova)
+                    data['reason'] = 'never_active'
+                    self.notify_me(data)
                     raise GeneralImagerFailure('We Failed waiting for image %s'
                                                ' to go active' % imid)
         except Exception, exp:

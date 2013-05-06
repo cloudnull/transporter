@@ -31,6 +31,20 @@ prefabs = {
                           ' that the image was found in a "%(status)s" state'
                           ' and was old. So at some point in recent history'
                           ' things were not working as intended.')},
+        'never_active':
+                {'subject': 'Image Never Went Active',
+                 'body': ('Salutations,\n\n'
+                          '  I am sorry to say that the image process has'
+                          ' failed. The Image ID was "%(id)s" while the process'
+                          ' looked like it would succeed, the image never went'
+                          ' active. This failed image was nuked, while this can'
+                          ' happen for a lot of reasons I would recommend you'
+                          ' have a look at the instance to see if you have a'
+                          ' bazillion INODES or if the instance is simply'
+                          ' taking up too much space, which would make it less'
+                          ' than practicle to create instance images. Otherwise'
+                          ' you can login and fire off a manual image or see'
+                          ' if this happens again on the next run.')},
         'image_fail':
                 {'subject': 'Sorry to Say but We have had Failures',
                  'body': ('Dear User,\n\n'
