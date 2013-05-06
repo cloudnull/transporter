@@ -76,3 +76,52 @@ Mail Variables
  - ``mail_key`` | KeyForCert
  - ``mail_tls`` | True or False
  - ``mail_port`` | Port Number
+
+
+How to use this tool
+--------------------
+
+Application is simple to use. Simply follow this command and add your own custom name to the end.
+
+    .. code-block:: bash
+
+        xenosimager --system-config /etc/xenosimager/config.cfg --image-name $NAME_OF_THE_IMAGE
+
+
+Logs are created for all interaction of the imager, and can be found here :
+
+    .. code-block:: bash
+
+        /var/log/xenosimager.log
+
+
+Get Social
+----------
+
+* Downloadable on PyPi_
+* Downloadable on GitHub_
+* See My `GitHub Issues Page`_ for any and all Issues or Feature requests
+
+.. _PyPi: https://pypi.python.org/pypi/transporter
+.. _GitHub: https://github.com/cloudnull/transporter
+.. _GitHub Issues Page: https://github.com/cloudnull/transporter/issues
+
+See ``https://github.com/cloudnull/transporter/issues`` for Issues or Feature requests
+
+
+License
+_______
+
+Copyright [2013] [Kevin Carter]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
