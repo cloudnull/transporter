@@ -1,8 +1,9 @@
 Transporter
 ###########
-:date: 2012-03-08 16:22
-:tags: Openstack, Nova Compute, Nova, Glance, Imaging, XenServer
-:category: \*nix
+:Date: 2012-03-08 16:22
+:Tags: Openstack, Nova Compute, Nova, Glance, Imaging, XenServer
+:Category: \*nix
+:Author: Kevin Carter
 
 
 Create an Image from within an Instance
@@ -13,7 +14,7 @@ General Overview
 
 This application will create an image from information from within an instance. The application will look at the "*xenstore*" data from within the instance and then use your provided OpenStack credentials to create an image on the understood instance.
 
-Simply this will allow you to create images of instances on as a simple CRON job or on demand.
+Simply this will allow you to create images of instances as a simple automation; CRON job, on demand, or anythine else you can think of.
 
 
 Prerequisites :
@@ -22,6 +23,17 @@ Prerequisites :
 
 
 Installation is simple :
+
+  from Python.org, IE "pip"
+
+
+    .. code-block:: bash
+
+        pip install xenosimager
+
+
+  from Github, which is Trunk.
+
 
     .. code-block:: bash
 
@@ -95,7 +107,7 @@ Logs are created for all interaction of the imager, and can be found here :
         /var/log/xenosimager.log
 
 
-For automated image create please have a look at the example.cron.txt file, which is where you can find cron job examples, but with little to no ingenuity I am sure you could figure out other methods for automated image creation.
+For automated image create please have a look at the example.cron.txt file, which is where you can find cron job examples, but with little to no ingenuity I am sure you could figure out other methods for automated command execution.
 
 
 Get Social
