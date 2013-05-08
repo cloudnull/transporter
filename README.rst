@@ -12,7 +12,7 @@ Create an Image from within an Instance
 General Overview
 ----------------
 
-This application has been created to work with Openstack if using the XenServer Hypervisor. At this time the code base supports Openstack as a whole, whoever the application has only been tested on Rackspace Cloud Servers. 
+This application has been created to work with Openstack if using the XenServer Hypervisor. At this time the code base supports Openstack as a whole, however the application has only been tested on Rackspace Cloud Servers. 
 
 Overview:
 ---------
