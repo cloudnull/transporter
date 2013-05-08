@@ -17,7 +17,7 @@ This application has been created to work with Openstack if using the XenServer 
 Overview:
 ---------
 
-*XenOsImager* will create an image from information obtained from within the instance. The application will look at the "*xenstore*" data to determine the UUID of the instance, and the region. The user is only required input their OpenStack API Credentials into a simple configuration file. These credentials are only used to make API calls for image creation.
+*XenOsImager* will create an image from information obtained from within the instance. The application will look at the "*xenstore*" data to determine the UUID of the instance, and the region. The user is only required to input their OpenStack API Credentials into a simple configuration file. These credentials are only used to make API calls for image creation.
 
 Simply the application will allow you to create images of instances as a simple automation task; CRON job, on demand, or anythine else you can think of.
 
