@@ -37,8 +37,8 @@ configfile = """
 # os_verbose = True | False            +  mail_cert = /location/cert
 # os_password = SuperSecretInformation +  mail_key = KeyForCert
 # os_tenant = UsernameGenerally        +  mail_tls = True | False
-# os_region = WhereIsThisInstance      +  mail_port = Port Number
-# os_version = v2.0                    +
+# os_version = v2.0                    +  mail_port = Port Number
+# os_region = %(region)s
 # ================================= NOTES ======================================
 
 [basic]
@@ -47,7 +47,7 @@ log_level = info
 [openstack]
 os_user = YOU
 os_apikey = RANDOM-NUMBERS-AND-THINGS
-os_rax_auth = A-LOCATION
+os_rax_auth = %(region)s
 
 #[Mail]
 #mail_user =

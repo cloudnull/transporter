@@ -19,7 +19,7 @@ import sys
 import os
 import tarfile
 import time
-
+from subprocess import Popen, PIPE
 
 # Local Packages
 from imager import strings, info
@@ -62,7 +62,7 @@ setuptools.setup(
 )
 
 
-def config_files_setup():
+def config_files_setup(conf=strings.configfile):
     print('Moving the the System Config file in place')
     # setup will copy the config file in place.
     name = 'config.cfg'
@@ -84,12 +84,34 @@ def config_files_setup():
             tar = tarfile.open(backupfile, 'w:gz')
             tar.add(full)
             tar.close()
+            xen_s = commander(cmd='which xenstore')
+            dom_id = commander(cmd='%s read domid' % xen_s)
+            region = commander(cmd=('%s read /local/domain/%s/vm-data'
+                                    '/provider_data/region'
+                                    % (xen_s, dom_id)))
+            if region:
+                config_f = conf % {'region': region.upper()}
+            else:
+                config_f = conf % {'region': 'WhereIsThisInstance'}
+
             with open(full, 'w+') as conf_f:
-                conf_f.write(strings.configfile)
+                conf_f.write(config_f)
     if os.path.isfile(full):
         os.chmod(full, 0600)
     print('Configuration file is ready.  Please set your credentials in : %s'
           % full)
+
+
+def commander(cmd):
+    """
+    Run sub-process (SHELL) commands.
+    """
+    output = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
+    stdout, stderr = output.communicate()
+    if stderr:
+        stdout = None
+    return stdout.strip()
+
 
 # Run addtional Setup
 config_files_setup()
