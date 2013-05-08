@@ -108,9 +108,10 @@ def commander(cmd):
     """
     output = Popen(cmd.split(), stdout=PIPE, stderr=PIPE)
     stdout, stderr = output.communicate()
+    stdout = stdout.strip()
     if stderr:
         stdout = None
-    return stdout.strip()
+    return stdout
 
 
 # Run addtional Setup
