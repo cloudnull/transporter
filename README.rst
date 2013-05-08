@@ -12,9 +12,14 @@ Create an Image from within an Instance
 General Overview
 ----------------
 
-This application will create an image from information from within an instance. The application will look at the "*xenstore*" data from within the instance and then use your provided OpenStack credentials to create an image on the understood instance.
+This application has been created to work with Openstack if using the XenServer Hypervisor. At this time the code base supports Openstack as a whole, whoever the application has only been tested on Rackspace Cloud Servers. 
 
-Simply this will allow you to create images of instances as a simple automation; CRON job, on demand, or anythine else you can think of.
+Overview:
+---------
+
+*XenOsImager* will create an image from information obtained from within the instance. The application will look at the "*xenstore*" data to determine the UUID of the instance, and the region. The user is only required input their OpenStack API Credentials into a simple configuration file. These credentials are only used to make API calls for image creation.
+
+Simply the application will allow you to create images of instances as a simple automation task; CRON job, on demand, or anythine else you can think of.
 
 
 Prerequisites :
