@@ -68,7 +68,21 @@ def config_files_setup(conf=strings.configfile):
     name = 'config.cfg'
     path = '/etc/%s' % info.__appname__
     full = '%s%s%s' % (path, os.sep, name)
-    conf_file = strings.configfile % {'full_path': full}
+
+    str_v = {'full_path': full}
+
+    xen_s = commander(cmd='which xenstore')
+    dom_id = commander(cmd='%s read domid' % xen_s)
+    region = commander(cmd=('%s read /local/domain/%s/vm-data'
+                            '/provider_data/region'
+                            % (xen_s, dom_id)))
+    if region:
+        str_v['region'] = region.upper()
+    else:
+        str_v['region'] = 'WhereIsThisInstance'
+
+    conf_file = strings.configfile % str_v
+
     if not os.path.isdir(path):
         os.mkdir(path)
         with open(full, 'w+') as conf_f:
@@ -85,18 +99,8 @@ def config_files_setup(conf=strings.configfile):
             tar = tarfile.open(backupfile, 'w:gz')
             tar.add(full)
             tar.close()
-            xen_s = commander(cmd='which xenstore')
-            dom_id = commander(cmd='%s read domid' % xen_s)
-            region = commander(cmd=('%s read /local/domain/%s/vm-data'
-                                    '/provider_data/region'
-                                    % (xen_s, dom_id)))
-            if region:
-                config_f = conf % {'region': region.upper()}
-            else:
-                config_f = conf % {'region': 'WhereIsThisInstance'}
-
             with open(full, 'w+') as conf_f:
-                conf_f.write(config_f)
+                conf_f.write(conf_file)
     if os.path.isfile(full):
         os.chmod(full, 0600)
     print('Configuration file is ready.  Please set your credentials in : %s'
@@ -115,5 +119,7 @@ def commander(cmd):
     return stdout
 
 
-# Run addtional Setup
-config_files_setup()
+if len(sys.argv) > 1:
+    if sys.argv[1] == 'install':
+        # Run addtional Setup things
+        config_files_setup()
