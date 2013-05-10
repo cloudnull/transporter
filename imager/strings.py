@@ -22,6 +22,8 @@ configfile = """
 # The basic Healing system requires a database to store checks and instance
 # information.
 
+# Place me in "%(full_path)s" with permissions "0600" or "0400"
+
 # Note: Not all variables are needed, simply use what you need to. If you give
 # the system mail relay information you will get notices when images are
 # created, or issues happen. DO NOT USE "os_password" and "os_apikey" together,
